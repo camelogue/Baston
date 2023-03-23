@@ -1,4 +1,4 @@
-package com.example.baston.ui.gallery;
+package com.example.baston.ui.magnifier;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.baston.databinding.FragmentGalleryBinding;
+import com.example.baston.databinding.FragmentMagnifierBinding;
 
-public class GalleryFragment extends Fragment {
+public class MagnifierFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentMagnifierBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        MagnifierViewModel galleryViewModel =
+                new ViewModelProvider(this).get(MagnifierViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentMagnifierBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
+        final TextView textView = binding.textMagnifier;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
