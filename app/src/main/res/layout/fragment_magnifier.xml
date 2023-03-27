@@ -13,18 +13,33 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="Take a photo or select one from gallery to magnify your picture"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Take a photo to magnify your picture"
-        />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btncamera_id"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/text_magnifier"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
         android:text="Start Camera"
+        android:textSize="18sp"
         tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/BSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_magnifier"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="SELECT IMAGE"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageview_camera"

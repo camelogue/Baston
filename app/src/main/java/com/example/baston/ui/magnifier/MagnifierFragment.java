@@ -75,14 +75,14 @@ public class MagnifierFragment extends Fragment {
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 WeakReference<Bitmap> result_1 = new WeakReference<>(Bitmap.createScaledBitmap(imageBitmap, imageBitmap.getWidth(), imageBitmap.getHeight(), false).copy(Bitmap.Config.RGB_565, true));
                 Bitmap bm = result_1.get();
-                imageUri = saveImage(bm, getContext());
+                imageUri = saveImage(bm, getActivity().getApplicationContext());
                 imageViewCamera.setImageURI(imageUri);
             }
         });
     }
 
     private Uri saveImage(Bitmap image, Context context){
-        File imageFolder = new File(context.getCacheDir(), "images");
+        File imageFolder = new File(getActivity().getApplicationContext().getCacheDir(), "images");
         Uri uri = null;
         try{
             File file = new File(imageFolder, "captured_image.jpg");
@@ -90,7 +90,7 @@ public class MagnifierFragment extends Fragment {
             image.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             stream.flush();
             stream.close();
-            uri = FileProvider.getUriForFile(context.getApplicationContext(), "xx", file);
+            uri = FileProvider.getUriForFile(context.getApplicationContext(), "com.example.baston", file);
 
         }catch (IOException e) {
             e.printStackTrace();

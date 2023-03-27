@@ -10,7 +10,7 @@ public class MagnifierViewModel extends ViewModel {
 
     public MagnifierViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("BUYUTEC SAYFASI");
+//        mText.setValue("BUYUTEC SAYFASI");
     }
 
     public LiveData<String> getText() {
