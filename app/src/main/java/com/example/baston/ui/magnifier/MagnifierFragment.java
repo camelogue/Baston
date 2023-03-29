@@ -81,6 +81,7 @@ public class MagnifierFragment extends Fragment {
         });
     }
 
+    // İmage saving func
     private Uri saveImage(Bitmap image, Context context){
         File imageFolder = new File(getActivity().getApplicationContext().getCacheDir(), "images");
         Uri uri = null;
